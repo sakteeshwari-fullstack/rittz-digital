@@ -1,9 +1,9 @@
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
-  const { name, email, company, message } = await req.json();
+  const { name, email, phone, message } = await req.json(); // ✅ replaced company with phone
 
-  if (!name || !email || !message) {
+  if (!name || !email || !phone || !message) {
     return new Response(JSON.stringify({ message: "Please fill all required fields." }), {
       status: 400,
     });
@@ -26,7 +26,7 @@ export async function POST(req) {
         <h3>New Contact Request</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Company:</strong> ${company}</p>
+        <p><strong>Phone:</strong> ${phone}</p> <!-- ✅ Phone now included -->
         <p><strong>Message:</strong> ${message}</p>
       `,
     });
