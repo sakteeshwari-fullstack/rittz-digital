@@ -28,8 +28,11 @@ export default function Contact({ onClose }) {
     setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
   };
 
-  const handlePhoneChange = (value) => {
-    setFormData({ ...formData, phone: value });
+  const handlePhoneChange = (value, data) => {
+    const countryCode = data.dialCode;
+    const numberWithoutCode = value.replace(countryCode, "").replace(/^0+/, "");
+    const formattedPhone = `+${countryCode} - ${numberWithoutCode}`;
+    setFormData({ ...formData, phone: formattedPhone });
     setErrors((prev) => ({ ...prev, phone: "" }));
   };
 
@@ -72,9 +75,7 @@ export default function Contact({ onClose }) {
       const result = await res.json();
       setStatus(result.message || "Message sent!");
       setShowPopup(true);
-
       setTimeout(() => setShowPopup(false), 3000);
-
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
       setStatus("Something went wrong.");
@@ -104,7 +105,6 @@ export default function Contact({ onClose }) {
         <div className="flex-1 p-6 md:p-8 text-white relative z-10">
           <h1 className="text-3xl md:text-4xl font-bold mb-6">Talk To Us</h1>
           <div className="space-y-5">
-            {/* Name Field */}
             <div>
               <label className="block text-lg mb-1">Name</label>
               <input
@@ -117,7 +117,6 @@ export default function Contact({ onClose }) {
               {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
             </div>
 
-            {/* Email Field */}
             <div>
               <label className="block text-lg mb-1">Email</label>
               <input
@@ -129,9 +128,6 @@ export default function Contact({ onClose }) {
               />
               {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
             </div>
-
-
-            {/* Phone Field Styled Like Others */}
 
             <div>
               <label className="block text-lg mb-1">Phone Number</label>
@@ -148,7 +144,7 @@ export default function Contact({ onClose }) {
                     width: "100%",
                     fontSize: "16px",
                     outline: "none",
-                    paddingLeft: "48px", // give space for flag
+                    paddingLeft: "48px",
                   }}
                   buttonStyle={{
                     background: "transparent",
@@ -158,8 +154,8 @@ export default function Contact({ onClose }) {
                     top: "50%",
                     transform: "translateY(-50%)",
                     padding: "0",
-                    width: "40px", // wider button
-                    height: "30px", // taller button
+                    width: "40px",
+                    height: "30px",
                   }}
                   containerStyle={{
                     background: "transparent",
@@ -181,14 +177,11 @@ export default function Contact({ onClose }) {
                     zIndex: 9999,
                     border: "1px solid #333",
                   }}
-
                 />
               </div>
               {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
             </div>
 
-
-            {/* Message Field */}
             <div>
               <label className="block text-lg mb-1">Let’s Talk! What’s on your mind?</label>
               <textarea
@@ -203,7 +196,6 @@ export default function Contact({ onClose }) {
           </div>
         </div>
 
-        {/* Right Side - Contact Info & Submit Button */}
         <div className="flex-1 p-6 md:p-8 text-gray-200 flex flex-col justify-between gap-5 bg-[#1a1a1a7d] border-l border-gray-700 relative z-10">
           <div>
             <div className="flex items-start gap-4 mb-4">
@@ -220,7 +212,6 @@ export default function Contact({ onClose }) {
                 <p className="text-sm md:text-base leading-relaxed">
                   11/32 A3, Cenotaph Road, Teynampet,<br />
                   Chennai - 600018<br />
-
                 </p>
               </div>
             </div>
