@@ -1,0 +1,61 @@
+.underline-text span {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-text span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to left, white, grey, black);
+  transition: width 0.3s ease;
+}
+
+.underline-text1:hover span::after {
+  width: 260%;
+}
+.underline-text2:hover span::after {
+  width: 460%;
+}
+.underline-text3:hover span::after {
+  width: 220%;
+}
+.underline-text4:hover span::after {
+  width: 210% 
+}
+.underline-text5:hover span::after {
+  width: 280%;
+}
+
+
+@keyframes bounce-hover {
+  0% {
+    transform: scale(0.8) translateY(0);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.1) translateY(1px);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(0.95) translateY(7px);
+  }
+  80% {
+    transform: scale(1.05) translateY(4px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.group:hover .bounce-hover {
+  animation: bounce-hover 0.6s ease-out forwards;
+}
+
+.idea:hover{
+  
+  background: linear-gradient(to right, rgb(112, 110, 110), rgb(35, 34, 34), black);
+}
