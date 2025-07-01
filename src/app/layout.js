@@ -15,7 +15,7 @@ export const metadata = {
   title: "Rittz Digital",
   description: "Empowering Digital Growth with Next.js",
   icons: {
-    icon: "/favicon.ico", // Make sure favicon.ico exists in /public
+    icon: "/assets/favicon.ico", // Make sure favicon.ico exists in /public
   },
 };
 
