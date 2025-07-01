@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Rittz Digital",
-  description: "Empowering Digital Growth with Next.js",
+  title: "Top Website Development Company in Chennai – Rittz Digital",
+  description: "Rittz Digital is a trusted website development company in Chennai, offering custom web design, eCommerce, and SEO-friendly solutions for growing businesses.",
   icons: {
     icon: "/assets/favicon.ico", // Make sure favicon.ico exists in /public
   },
