@@ -7,10 +7,11 @@ import Products from "./products";
 import Idea from "./idea";
 import Gotidea from "./gotidea";
 import Testimonials from "./testimonial";
+import HeroSection from "./hero";
 export default function main() {
   return (
     <>
-      <Hero/>
+      <HeroSection/>
       <Ourgoals/> 
       <Products/>
       <Idea/>

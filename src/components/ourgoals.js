@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import ScrollAnimatedDiv from "./ScrollAnimation";
 import gsap from "gsap";
+import Image from "next/image";
 
 export default function Ourgoals() {
   const anime1 = React.useRef(null);
@@ -65,18 +66,10 @@ export default function Ourgoals() {
               <div>
                 <div className="flex sm:block mb-5 mt-10 sm:mt-0 relative justify-center sm:justify-normal">
                   <div className="  flex sm:flex-row mt-20 flex-col gap-10">
-                    <div className="bg-white  hover:bg-gray-100 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-md rounded-lg inset-shadow-sm inset-shadow-gray-300 flex flex-col justify-center text-center p-6 sm:w-[362px] sm:h-[282px] sm:ml-5 mx-4">
-                      <div ref={anime1} className="w-full relative mb-10">
-                        <img
-                          src="/assets/Rectangle 4156.png"
-                          alt="Icon 1"
-                          className="absolute  top-0 left-35 "
-                        />
-                        <img
-                          src="/assets/Rectangle 4157.png"
-                          alt="Icon 1"
-                          className="absolute -top-2 left-38 "
-                        />
+                    <div className="bg-white  hover:bg-gray-100 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-md rounded-lg inset-shadow-sm inset-shadow-gray-300 flex flex-col justify-center text-center p-6  sm:w-[362px] sm:h-[282px] sm:ml-5 mx-4">
+                      <div className="w-full  flex justify-center  relative mb-10">
+                        <Image width={30} height={30} alt="ourGoal-images" ref={anime1}  src="/assets/our-goals/endtoend.svg"/>
+                        
                       </div>
                       <h3 className="font-semibold text-[20px] mb-8 text-gray-700">
                         End-To-End Collaboration
@@ -87,28 +80,10 @@ export default function Ourgoals() {
                       </p>
                     </div>
 
-                    <div className="bg-white hover:bg-gray-100 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-md rounded-lg inset-shadow-sm inset-shadow-gray-300 flex flex-col justify-center text-center p-6 sm:w-[362px] sm:h-[282px] sm:ml-5 mx-4">
-                      <div ref={anime2} className="w-full relative mb-10">
-                        <img
-                          src="/assets/Rectangle 4158.png"
-                          alt="Icon 2"
-                          className=" absolute  top-0 left-35"
-                        />
-                        <img
-                          src="/assets/Rectangle 4161.png"
-                          alt="Icon 2"
-                          className="absolute  top-0 left-35"
-                        />
-                        <img
-                          src="/assets/Rectangle 4159.png"
-                          alt="Icon 2"
-                          className="absolute  top-0 left-38"
-                        />
-                        <img
-                          src="/assets/Rectangle 4160.png"
-                          alt="Icon 2"
-                          className="absolute  top-4 left-40.5"
-                        />
+                    <div className="bg-white hover:bg-gray-100 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-md rounded-lg inset-shadow-sm inset-shadow-gray-300 flex flex-col justify-center text-center p-6 sm:w-[400px] sm:h-[282px] mx-2 sm:mx-0">
+                      <div  className="w-full  flex justify-center relative mb-10">
+                        <Image width={30} height={30} alt="ourGoal-images" ref={anime2} src="/assets/our-goals/creative.svg"/>
+                        
                       </div>
                       <h3 className="font-semibold text-[20px] mb-8 text-gray-700">
                         Creative Problem-Solving
@@ -147,18 +122,10 @@ export default function Ourgoals() {
 
                 <div className="flex justify-center sm:justify-normal">
                   <div className="flex flex-col gap-5 sm:flex-row ">
-                    <div className="bg-white hover:bg-gray-100 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-md rounded-lg inset-shadow-sm inset-shadow-gray-300 flex flex-col justify-center text-center p-6 sm:w-[362px] sm:h-[282px] sm:ml-5 mx-4">
-                      <div ref={anime3} className="w-full relative mb-10">
-                        <img
-                          src="/assets/Group 31.png"
-                          alt="Icon 1"
-                          className="absolute  top-0 left-35 "
-                        />
-                        <img
-                          src="/assets/Group 32.png"
-                          alt="Icon 1"
-                          className="absolute -top-2 left-38.5 "
-                        />
+                    <div className="bg-white hover:bg-gray-100 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-md rounded-lg inset-shadow-sm inset-shadow-gray-300 flex flex-col justify-center text-center p-6 sm:w-auto sm:h-[282px] sm:ml-5 mx-4">
+                      <div  className="w-full  flex justify-center relative mb-10">
+                        <Image width={30} height={30} alt="ourGoal-images" ref={anime3} src="/assets/our-goals/Iterative.svg"/>
+                        
                       </div>
                       <h3 className="font-semibold text-[20px] mb-8 text-gray-700">
                         Iterative Process
@@ -168,38 +135,10 @@ export default function Ourgoals() {
                       </p>
                     </div>
 
-                    <div className="bg-white hover:bg-gray-100 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-md rounded-lg inset-shadow-sm inset-shadow-gray-300 flex flex-col justify-center text-center p-6 sm:w-[362px] sm:h-[282px] sm:ml-5 mx-4">
-                      <div ref={anime4} className="w-full relative mb-10">
-                        <img
-                          src="/assets/blue circle.png"
-                          alt="Icon 2"
-                          className=" absolute  top-0 left-37"
-                        />
-                        <img
-                          src="/assets/blue star.png"
-                          alt="Icon 2"
-                          className="absolute  -top-2 left-35"
-                        />
-                        <img
-                          src="/assets/red dot.png"
-                          alt="Icon 2"
-                          className="absolute  -top-1 left-43"
-                        />
-                        <img
-                          src="/assets/red rectangle.png"
-                          alt="Icon 2"
-                          className="absolute  -top-2 left-42"
-                        />
-                        <img
-                          src="/assets/yellow dot.png"
-                          alt="Icon 2"
-                          className="absolute  top-4 left-30"
-                        />
-                        <img
-                          src="/assets/yellow rectangle.png"
-                          alt="Icon 2"
-                          className="absolute  top-3 left-29"
-                        />
+                    <div className="bg-white hover:bg-gray-100 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-md rounded-lg inset-shadow-sm inset-shadow-gray-300 flex flex-col justify-center text-center p-6 sm:w-auto sm:h-[282px] sm:ml-5 mx-4">
+                      <div  className="w-full  flex justify-center relative mb-10">
+                        <Image width={80} height={50} alt="ourGoal-images" ref={anime4} src="/assets/our-goals/engineering.svg" />
+                        
                       </div>
                       <h3 className="font-semibold text-[20px] mb-8 text-gray-700">
                         Engineering Meets Empathy
@@ -209,18 +148,10 @@ export default function Ourgoals() {
                         Use.
                       </p>
                     </div>
-                    <div className="bg-white hover:bg-gray-100 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-md rounded-lg inset-shadow-sm inset-shadow-gray-300 flex flex-col justify-center text-center p-6 sm:w-[362px] sm:h-[282px] sm:ml-5 mx-4">
-                      <div ref={anime5} className="w-full relative mb-10">
-                        <img
-                          src="/assets/Ellipse 49.png"
-                          alt="Icon 1"
-                          className="absolute  top-0 left-35 "
-                        />
-                        <img
-                          src="/assets/Vector.png"
-                          alt="Icon 1"
-                          className="absolute top-0.5 left-36.5 "
-                        />
+                    <div className="bg-white hover:bg-gray-100 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-md rounded-lg inset-shadow-sm inset-shadow-gray-300 flex flex-col justify-center text-center p-6 sm:w-auto sm:h-[282px] sm:ml-5 mx-4">
+                      <div  className="w-full flex justify-center relative mb-10">
+                      <Image width={30} height={30} alt="ourGoal-images" ref={anime5} src="/assets/our-goals/launch-ready.svg"/>
+                       
                       </div>
                       <h3 className="font-semibold text-[20px] mb-8 text-gray-700">
                         Launch-Ready Mindset
@@ -234,7 +165,7 @@ export default function Ourgoals() {
               </div>
             </div>
           </div>
-          <div className="overflow-hidden whitespace-nowrap mt-8">
+          <div className="overflow-hidden  whitespace-nowrap mt-8">
             <div className="inline-block animate-marquee sm:text-8xl text-4xl font-extrabold text-black md:text-white soft-shadow">
               Build faster. Launch smarter. No code required.
             </div>
