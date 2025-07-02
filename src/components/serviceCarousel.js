@@ -57,7 +57,7 @@ export default function ServiceCarousel() {
           modules={[Autoplay]}
           spaceBetween={20}
           slidesPerView={1.1}
-          autoplay={{ delay: 2500 }}
+          autoplay={{ delay:500 }}
           loop={true}
           grabCursor={true}
           className="w-fullpx-4 pl-5"

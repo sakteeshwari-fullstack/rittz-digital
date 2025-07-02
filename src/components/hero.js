@@ -1,139 +1,107 @@
-"use client";
-
-import React, { useEffect, useRef } from "react";
-import Header from "./header";
-import Brand from "./brand";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+'use client';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import RotatingCards from './RotatingCards';
+import Header from './header';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hero() {
-  const cubeRef = useRef(null);
-  const heroRef = useRef(null);
-  const textRef = useRef(null);
+const HeroSection = () => {
+  const yellowRef = useRef(null);
+  const contentRef = useRef(null);
 
   useEffect(() => {
-    const cube = cubeRef.current;
-    const text = textRef.current;
-    const hero = heroRef.current;
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: yellowRef.current,
+          start: "top 50%",
+          end: "+=200",
+          // markers:true,
+          scrub: true,
+          onEnter: () => {
+            if (contentRef.current) {
+              contentRef.current.style.display = 'flex';
+              gsap.fromTo(
+                contentRef.current.children,
+                { y: 100, opacity: 0 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  stagger: 0.3,
+                  duration: 1,
+                  ease: "power3.out"
+                }
+              );
+            }
+          },
+          onLeaveBack: () => {
+            if (contentRef.current) {
+              gsap.to(contentRef.current.children, {
+                y: 100,
+                opacity: 0,
+                duration: 0.5,
+                onComplete: () => {
+                  contentRef.current.style.display = 'none';
+                }
+              });
+            }
+            gsap.to(yellowRef.current, {
+              scale: 1,
+              duration: 0.6,
+              ease: 'power2.out'
+            });
+          }
+        }
+      });
 
-    const frontFace = cube.children[0];
-    const bottomFace = cube.children[1];
-
-    gsap.set(cube, { scale: 1 });
-
-   
-    gsap.to(cube, {
-      scale: 20,
-      scrollTrigger: {
-        trigger: hero,
-        start: "top -5%",
-        end: "bottom 20%",
-        scrub: true,
-        pin: true,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          const amber50 = "#fee9a9"; 
-          const amber500 = "#f59e0b";
-          const bottomColor = "#fff6db";
-
-          const blend = (from, to, p) => {
-            const f = parseInt(from.slice(1), 16);
-            const t = parseInt(to.slice(1), 16);
-            const rf = f >> 16,
-              gf = (f >> 8) & 0xff,
-              bf = f & 0xff;
-            const rt = t >> 16,
-              gt = (t >> 8) & 0xff,
-              bt = t & 0xff;
-            const r = Math.round(rf + (rt - rf) * p);
-            const g = Math.round(gf + (gt - gf) * p);
-            const b = Math.round(bf + (bt - bf) * p);
-            return `rgb(${r}, ${g}, ${b})`;
-          };
-
-          frontFace.style.backgroundColor = blend(amber500, amber50, progress);
-          bottomFace.style.backgroundColor = blend(
-            bottomColor,
-            amber50,
-            progress
-          );
-        },
-      },
-      ease: "power2.out",
+      gsap.to(yellowRef.current, {
+        scale: 50,
+        scrollTrigger: {
+          trigger: yellowRef.current,
+          start: "top 55%",  
+          end:"top 40%",        
+          // markers:true,
+          scrub: true,
+        }
+      });
     });
 
-  
-    gsap.fromTo(
-      text,
-      {
-        x: -10,
-        y: -250,
-        opacity: 0,
-        scale: 0.8,
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        scrollTrigger: {
-          trigger: cube,
-          start: "top -5%",
-          end: "bottom 20%",
-          scrub: 1,
-        },
-        ease: "none",
-      }
-    );
+    return () => ctx.revert();
   }, []);
 
   return (
-    <>
-      <main
-        ref={heroRef}
-        className="relative bg-[#b51947] w-full h-[110vh] overflow-hidden text-white font-sans"
-        style={{ perspective: "1000px" }}
-      >
-        <Header />
-
-        <div className="absolute w-full sm:mt-30 mt-10">
-          <h1 className="sm:text-7xl text-3xl sm:ml-[8rem]  ml-4 mt-24 sm:mt-[5rem] relative font-semibold leading-tight z-0">
-            <span className="font-bold text-4xl sm:text-8xl">W</span>e Build Products
-            <br />
-            That <span className="font-bold">Scale —</span>
-            <br />
-            <span className="font-bold">No Code Required.</span>
-          </h1>
-
-          <div
-            ref={cubeRef}
-            className="absolute overflow-hidden w-[7rem] h-[7rem] -bottom-56 sm:w-[12rem] right-7 sm:h-[12rem] sm:-bottom-15 sm:-right-23 rounded-full rotate-45 transform-style-preserve-3d z-10"
-            style={{ transformStyle: "preserve-3d" }}
-          >
-            <div
-              className="absolute w-full h-full rounded-[20px] bg-amber-500 p-20"
-              style={{ transform: "translateZ(244px)" }}
-            ></div>
-            <div
-              className="absolute w-full h-full rounded-[40px] bg-amber-500 p-20"
-              style={{
-                transform: "rotateX(90deg) translateZ(244px)",
-                backfaceVisibility: "hidden",
-              }}
-            ></div>
-          </div>
-
-          <div
-            ref={textRef}
-            className="absolute bottom-[-50rem] sm:bottom-[-40rem] right-[10%] text-[50px] font-bold z-30"
-          >
-            <Brand />
-          </div>
-
-          <div className="absolute bg-green-600 -right-16 top-[26rem] sm:-bottom-55 sm:right-12 sm:w-[12rem] w-[7.5rem] rotate-45 rounded-full sm:h-[13rem] h-[7.5rem] z-0"></div>
-          <div className="absolute bg-[#F87558] -bottom-32 -right-24 sm:bottom-28 sm:right-14 w-[9rem] h-[9rem] sm:w-[12rem] sm:h-[12rem] rotate-45 rounded-full z-0"></div>
+    <div >
+    <div className="relative h-[150vh] w-full bg-[#B91B4A] overflow-hidden">
+      <div className=' relative'>
+        <Header/>
+        <div className='  absolute  top-[10rem] left-[0.8rem]  sm:top-[15rem] md:left-[5rem]'>                
+          <h1 className='md:text-5xl lg:text-7xl sm:text-5xl text-3xl  font-bold leading-[1.3]'> <span className="font-bold text-5xl sm:text-7xl md:text-9xl ">W</span>e Build Products <br/> That Scale <span className='inline-block w-10 h-1 bg-white mb-2.5'></span> <br/>No Code Required.</h1>
         </div>
-      </main>
-    </>
+      </div>
+      {/* Corner dots */}
+      <div className="absolute w-fit bottom-6/12 md:bottom-7/12 right-0 space-x-2 space-y-2 flex flex-col items-end z-10">
+     <div className="w-36 h-36 md:w-44 md:h-44 -top-28 -right-20 md:-top-36 md:-right-20  absolute rounded-full bg-[#EB4132]"></div>        
+      <div ref={yellowRef} className="w-28 h-28 md:w-40 md:h-40 absolute right-8 top-2 md:right-10 z-[9999] rounded-full bg-[#cba22f] transition-transform duration-1000"
+      ></div>
+      <div  className="w-28 h-28 md:w-44 absolute md:h-44 top-24 -right-12 md:top-32 md:-right-20 rounded-full bg-[#31AA52]"></div>
+        
+      </div>
+
+      {/* Rotating content section */}
+      <div
+        ref={contentRef}
+        className="hidden flex-col items-center justify-center w-full h-full absolute top-0 left-0 z-30"
+      >
+        <RotatingCards />
+      </div>
+    </div>
+
+    
+    </div>
   );
-}
+};
+
+export default HeroSection;
+
