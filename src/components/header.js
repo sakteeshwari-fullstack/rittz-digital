@@ -36,9 +36,7 @@ export default function Header() {
           </button>
 
           <Link
-            href="/nocodenest"
-            
-            
+            href="/no-code-nest"
             className="px-3 hidden sm:block sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-emerald-500 text-white border border-emerald-600 rounded-md relative overflow-hidden group"
           >
             <span
