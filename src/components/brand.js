@@ -172,12 +172,12 @@ bottomImages.forEach((img, i) => {
     >
       <div
         ref={textRef}
-        className="absolute left-10 top-20 lg:top-60  w-fit text-left z-10 transition-opacity duration-300 opacity-100"
+        className="absolute  top-44 lg:top-96 text-left w-full z-10 transition-opacity duration-300 opacity-100"
       > 
         <p className="sm:text-[2rem] text-[1.5rem] font-semibold text-gray-800">
           Behind The Brand
         </p>
-        <h2 className="sm:text-[2.5rem] text-[1.7rem] font-semibold leading-[1.3] sm:leading-snug">
+        <h2 className="sm:text-[2.5rem] text-[2.1rem] font-semibold leading-[1.3] sm:leading-snug">
           We are not afraid. we are <br />
           your partners. <br />
           we build unique with you.
@@ -186,7 +186,7 @@ bottomImages.forEach((img, i) => {
 
       <div
         ref={imageRef}
-        className="absolute mr-[-4rem] transition-opacity duration-300  border-black bottom-[15%] sm:bottom-52 right-16 sm:right-[20%]  w-60 h-60 bg-white rounded-md z-10 opacity-100"
+        className="absolute mr-[-4rem] transition-opacity duration-300  border-black bottom-40 sm:bottom-52 right-16 sm:right-[12rem] w-60 h-60 bg-white rounded-md z-10 opacity-100"
       >
         <img
           src="/assets/Rectangle 4206.png"
@@ -212,7 +212,7 @@ bottomImages.forEach((img, i) => {
 
       <div
         ref={bottomImageRef}
-        className="absolute sm:top-[15rem] top-40  right-2 sm:right-[18%] transition-opacity duration-300  w-60 h-60 bg-white border border-yellow-500 rounded-md z-10 opacity-0"
+        className="absolute sm:top-[20rem] top-40 sm:mr-[-54rem] transition-opacity duration-300  w-60 h-60 bg-white border border-yellow-500 rounded-md z-10 opacity-0"
       >
         <img
           src="/assets/Rectangle 4206.png"
@@ -238,12 +238,12 @@ bottomImages.forEach((img, i) => {
 
       <div
         ref={bottomTextRef}
-        className="absolute bottom-14 sm:top-[30%] left-10 transition-opacity duration-300 opacity-0  text-left w-fit z-10"
+        className="absolute top-[28rem] sm:top-[20rem] transition-opacity duration-300 opacity-0  text-left w-full z-10"
       >
         <p className="text-[1.5rem] sm:text-[2rem] font-semibold text-yellow-500">
           Behind The Brand
         </p>
-        <p className="sm:text-[2.5rem] text-[1.6rem] text-black font-semibold">
+        <p className="sm:text-[2.5rem] text-[1.9rem] text-black font-semibold">
           we <span className="text-yellow-500 font-semibold">blend design</span>
           , tech, and creativity
           <br />
@@ -257,18 +257,18 @@ bottomImages.forEach((img, i) => {
 
       <div
         ref={cubeRef}
-        className="relative w-[17rem] sm:w-screen h-[30rem] sm:mr-[0rem] -mr-5 sm:-mr-0  rounded-[40px] transform-style-preserve-3d "
+        className="relative w-[17rem] sm:w-[70rem] h-[30rem] sm:mr-[3rem] -mr-5 sm:-mr-0  rounded-[40px] transform-style-preserve-3d "
         style={{ transformStyle: "preserve-3d" }}
       >
         
         <div
-          className="absolute  w-full h-full rounded-[40px] bg-red-500  flex items-center justify-between text-white"
+          className="absolute w-full h-full rounded-[40px] bg-amber-500 p-20 flex items-center justify-between text-white"
           style={{ transform: "translateZ(244px)" }}
         ></div>
 
         
         <div
-          className="bg-[#36ce63]  rounded-[40px] flex items-center justify-between h-full sm:max-h-[488px]"
+          className="bg-[#f5f0e3] rounded-[40px]  p-20 flex items-center justify-between h-full top-20max-h-[488px]"
           style={{
             transform: "rotateX(90deg) translateZ(244px)",
             backfaceVisibility: "hidden",
@@ -278,50 +278,3 @@ bottomImages.forEach((img, i) => {
     </div>
   );
 }
-
-<main
-//         ref={heroRef}
-//         className="relative bg-[#b51947] w-full h-[110vh] overflow-hidden text-white font-sans"
-//         style={{ perspective: "1000px" }}
-//       >
-//         <Header/>
-
-//         <div className="absolute w-full sm:mt-30 mt-10">
-//           <h1 className="sm:text-7xl text-3xl sm:ml-[8rem]  ml-4 mt-24 sm:mt-[5rem] relative font-semibold leading-tight z-0">
-//             <span >W</span>e Build Products
-//             <br />
-//             That <span className="font-bold">Scale —</span>
-//             <br />
-//             <span className="font-bold">No Code Required.</span>
-//           </h1>
-
-//           <div
-//             ref={cubeRef}
-//             className="absolute overflow-hidden w-[7rem] h-[7rem]  bg-red-700 -bottom-56 sm:w-[12rem] right-7 sm:h-[12rem] sm:-bottom-15 sm:-right-23 rounded-full rotate-45 transform-style-preserve-3d z-10"
-//             style={{ transformStyle: "preserve-3d" }}
-//           >
-//             <div
-//               className="absolute w-full h-full rounded-[20px] bg-amber-500 p-20"
-//               style={{ transform: "translateZ(244px)" }}
-//             ></div>
-//             <div
-//               className="absolute w-full h-full rounded-[40px] bg-amber-500 p-20"
-//               style={{
-//                 transform: "rotateX(90deg) translateZ(244px)",
-//                 backfaceVisibility: "hidden",
-//               }}
-//             ></div>
-//           </div>
-
-         
-//           <div
-//             ref={textRef}
-//             className="absolute bottom-[-40rem] w-screen sm:bottom-[-40rem] left-20 text-[50px] border-4 font-bold z-30"
-//           >
-//             <Brand />
-//           </div>
-
-//           <div className="absolute bg-green-600 -right-16 top-[26rem] sm:-bottom-55 sm:right-12 sm:w-[12rem] w-[7.5rem] rotate-full rounded-full sm:h-[13rem] h-[7.5rem] z-0"></div>
-//           <div className="absolute bg-[#F87558] -bottom-32 -right-24 sm:bottom-28 sm:right-14 w-[9rem] h-[9rem] sm:w-[12rem] sm:h-[12rem] rotate-45 rounded-full z-0"></div>
-//         </div>
-//       </main>
