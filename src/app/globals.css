@@ -5,7 +5,19 @@
   --foreground: #171717;
 }
 
+@layer components {
+  .restrict {
+    @apply flex flex-col gap-18 px-5 sm:px-[30px] lg:px-[57px];
+  }
+
+  .escape {
+    @apply -mx-5 sm:-mx-[30px] lg:-mx-[57px] ;
+  }
+}
+
 @theme inline {
+   --font-rockSalt : var(--font-rock-salt);
+   --font-poppins : var(--font-poppins);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -42,15 +54,14 @@ body {
                0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
-
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
 
 .react-tel-input .country {
   padding: 10px 16px;
@@ -78,3 +89,86 @@ body {
   border-radius: 4px;
 }
 
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease-in-out infinite alternate;
+}
+
+.hero{
+  background-image: 
+  linear-gradient(
+    to right,
+    /* #fff 0px,
+      #fff 2px, */
+      /* Space until next line */
+      transparent 0px,
+      transparent calc(25% - 1px),
+
+      /* Line 2: 25% position */
+      #fff calc(25% - 1px),
+      #fff calc(25% + 1px),
+      transparent calc(25% + 1px),
+      transparent calc(50% - 1px),
+
+      /* Line 3: 50% position */
+      #fff calc(50% - 1px),
+      #fff calc(50% + 1px),
+      transparent calc(50% + 1px),
+      transparent calc(75% - 1px),
+
+      /* Line 4: 75% position */
+      #fff calc(75% - 1px),
+      #fff calc(75% + 1px),
+      transparent calc(75% + 1px),
+      transparent calc(100% ),
+
+      /* Line 5: Right edge */
+      #fff calc(100% - 2px),
+      #fff 100%
+  ),
+  linear-gradient(
+    to bottom,
+    /* #fff 0px,
+      #fff 2px, */
+      /* Space until next line */
+      transparent 0px,
+      transparent calc(25% - 1px),
+
+      /* Line 2: 25% position */
+      #fff calc(25% - 1px),
+      #fff calc(25% + 1px),
+      transparent calc(25% + 1px),
+      transparent calc(50% - 1px),
+
+      /* Line 3: 50% position */
+      #fff calc(50% - 1px),
+      #fff calc(50% + 1px),
+      transparent calc(50% + 1px),
+      transparent calc(75% - 1px),
+
+      /* Line 4: 75% position */
+      #fff calc(75% - 1px),
+      #fff calc(75% + 1px),
+      transparent calc(75% + 1px),
+      transparent calc(100%),
+
+      /* Line 5: Right edge */
+      #fff calc(100% - 2px),
+      #fff 100%
+  )
+  /* linear-gradient(
+    90deg,
+    #ffffff .1rem,
+    transparent .1rem);
+    background-size: 14rem 10rem; */
+}
