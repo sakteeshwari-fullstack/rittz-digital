@@ -2,6 +2,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Contact from "./contact";
+import Link from "next/link";
 
 export default function Header() {
   const [showContact, setShowContact] = React.useState(false);
@@ -34,10 +35,10 @@ export default function Header() {
             </span>
           </button>
 
-          <a
-            href="https://nocodenest.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/nocodenest"
+            
+            
             className="px-3 hidden sm:block sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-emerald-500 text-white border border-emerald-600 rounded-md relative overflow-hidden group"
           >
             <span
@@ -47,7 +48,7 @@ export default function Header() {
             <span className="relative z-10 transition-colors duration-200 font-semibold group-hover:text-white">
               NoCodeNest
             </span>
-          </a>
+          </Link>
 
           <span className="text-sm hidden sm:block sm:text-base md:text-lg font-semibold text-black">
             Menu
