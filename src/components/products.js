@@ -32,7 +32,7 @@ export default function Products() {
               <span className="block h-[2px] bg-amber-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 mt-1"></span>
             </p>
             <p className="underline-text2 text-lg sm:text-lg md:text-xl font-semibold hover:text-green-300 relative group inline-block">
-              We shape new products by combining design, technology
+              We shape new products by combining design, technology{" "}
               <span>, and creativity.</span>
               <span className="block h-[2px] bg-green-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 mt-1"></span>
             </p>
@@ -41,11 +41,11 @@ export default function Products() {
               <span className="block h-[2px] bg-blue-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 mt-1"></span>
             </p>
             <p className="underline-text4 text-lg sm:text-lg md:text-xl font-semibold hover:text-orange-500 relative group inline-block">
-              Affordable tech, <span>Human impact.</span>
+              Affordable tech, <span>human impact.</span>
               <span className="block h-[2px] bg-orange-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 mt-1"></span>
             </p>
             <p className="underline-text5 text-lg sm:text-lg md:text-xl font-semibold hover:text-red-500 relative group inline-block">
-              Bold, collaborative, people-focused <span> innovation.</span>
+              Bold, collaborative, people-foc <span>used innovation.</span>
               <span className="block h-[2px] bg-red-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 mt-1"></span>
             </p>
           </div>
