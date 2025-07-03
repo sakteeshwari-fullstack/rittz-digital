@@ -61,49 +61,7 @@ export default function Services() {
         </p>
       </div>
 
-      {/* Services Grid */}
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-10 gap-x-4">
-        {[
-          {
-            img: "/assets/Our Services.png",
-            title: "Digital Product\nStrategy",
-          },
-          {
-            img: "/assets/Our Services 1.png",
-            title: "UI/UX Design &\nPrototyping",
-          },
-          {
-            img: "/assets/Our Services.png",
-            title: "Backend Development\n& API Integration",
-          },
-          {
-            img: "/assets/Our Services 1.png",
-            title: "Cloud-Based\nSolutions",
-          },
-          {
-            img: "/assets/Our Services.png",
-            title: "Ongoing Maintenance\n& Support",
-          },
-          {
-            img: "/assets/Our Services 1.png",
-            title: "Custom Mobile App\nDevelopment",
-          },
-        ].map((item, idx) => (
-          <div
-            key={idx}
-            className="relative text-black  transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-105 w-full max-w-[240px] mx-auto"
-          >
-            <img
-              src={item.img}
-              alt={item.title}
-              className="w-full h-auto rounded-xl"
-            />
-            <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-medium mt-3 whitespace-pre-line text-sm sm:text-base">
-              {item.title}
-            </p>
-          </div>
-        ))}
-      </div> */}
+      
       <ServiceCasrousel/>
 
       {/* Bottom Link */}

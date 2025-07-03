@@ -1,4 +1,3 @@
-import Hero from "./hero";
 import Ourgoals from "./ourgoals";
 import Services from "./services";
 import Footer from "./footer";
