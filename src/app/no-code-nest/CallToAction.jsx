@@ -3,7 +3,7 @@ import React from 'react'
 
 const CallToAction = () => {
   return (
-    <div className='escape flex flex-col gap-8 lg:gap-12 pb-24 pt-8 px-2 items-center justify-center text-center'>
+    <div className='escape text-black flex flex-col gap-8 lg:gap-12 pb-24 pt-8 px-2 items-center justify-center text-center'>
       <h1 className='text-[32px] md:text-[40px] lg:text-[60px] leading-[1.5] font-extrabold text-balance md:max-w-2/3'>Ready to <span className='text-emerald-500'>launch your store,</span> your way?</h1>
 
 <div className='flex flex-col gap-6 md:flex-row md:gap-2 font-rockSalt text-2xl md:text-3xl'>
