@@ -19,7 +19,6 @@ const RotatingCards = () => {
           end: '+=1150',
           scrub: true,
           pin: true,
-          // markers: true,
         },
       });
 
@@ -48,7 +47,7 @@ const RotatingCards = () => {
 
   return (
     <div ref={wrapperRef} className="relative w-full h-[200vh]">
-      {/* Card 1 */}
+      {/* Card One */}
       <div
         ref={card1Ref}
         className="absolute top-1/2 left-1/2 mt-44 w-screen   max-w-[1100px] transform -translate-x-1/2 -translate-y-1/2 sm:h-96 py-10 sm:py-0 bg-[#EB4132] backdrop-blur-md text-white flex flex-col sm:flex-row justify-between items-center sm:px-10 rounded-2xl shadow-2xl min-w-0"
@@ -62,7 +61,7 @@ const RotatingCards = () => {
         </div>
       </div>
 
-      {/* Card 2 */}
+      {/* Card Two */}
       <div
         ref={card2Ref}
         className="absolute top-1/2 mt-52 md:mt-20 left-1/2 w-screen   max-w-[1100px] transform -translate-x-1/2 -translate-y-1/2 sm:h-96 py-10 sm:px-10 bg-[#268b41] backdrop-blur-md text-white flex flex-col sm:flex-row justify-between items-center rounded-2xl shadow-2xl opacity-0 min-w-0"
