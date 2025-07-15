@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Poppins,Rock_Salt } from "next/font/google";
 
 import "./globals.css";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,9 +42,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${rockSalt.variable} antialiased`}
+        className={`relative ${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${rockSalt.variable} antialiased`}
       >
+        <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

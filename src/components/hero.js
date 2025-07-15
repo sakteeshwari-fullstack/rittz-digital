@@ -74,8 +74,8 @@ const HeroSection = () => {
   return (
     <div >
     <div className="relative h-[150vh] w-full bg-[#B91B4A] overflow-hidden">
-      <div className=' relative'>
-        <Header/>
+      <div className='relative'>
+        {/* <Header/> */}
         <div className='  absolute  top-[10rem] left-[0.8rem]  sm:top-[15rem] md:left-[5rem]'>                
           <h1 className='md:text-5xl lg:text-7xl sm:text-5xl text-3xl  font-bold leading-[1.3]'> <span className="font-bold text-5xl sm:text-7xl md:text-9xl ">W</span>e Build Products <br/> That Scale <span className='inline-block w-10 h-1 bg-white mb-2.5'></span> <br/>No Code Required.</h1>
         </div>

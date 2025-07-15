@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full px-4 sm:px-6  md:px-10 py-3 pt-6 sm:py-4 md:py-5 flex items-center justify-between bg-transparent z-40">
+      <header className="w-full fixed px-4 sm:px-6  md:px-10 py-3 pt-6 sm:py-4 md:py-5 flex items-center justify-between bg-transparent backdrop-blur-3xl z-40">
         <div className="flex items-center">
           <img
             src="/assets/rittz_logo.png"
