@@ -18,7 +18,7 @@ export default function main() {
       <Casestudies/>
       <Testimonials/>
       <Gotidea/>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 }
