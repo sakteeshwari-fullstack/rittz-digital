@@ -172,3 +172,14 @@ body {
     transparent .1rem);
     background-size: 14rem 10rem; */
 }
+
+/* Targetting tall mobile devices */
+@media (min-height: 800px) and (max-width: 768px) {
+  .tall-mobile\:text-\[2\.75rem\] {
+    font-size: 2.75rem;
+  }
+  
+  .tall-mobile\:text-\[1\.1rem\] {
+    font-size: 1.1rem;
+  }
+}
