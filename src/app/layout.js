@@ -4,6 +4,8 @@ import Script from "next/script";
 
 
 import "./globals.css";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,10 +42,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    
     <html lang="en">
-      
-        <Script id="gtm-init" strategy="beforeInteractive">
+       <Script id="gtm-init" strategy="beforeInteractive">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -52,10 +52,8 @@ export default function RootLayout({ children }) {
           })(window,document,'script','dataLayer','GTM-WMK2Z276');
         `}
       </Script>
-      
-      
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${rockSalt.variable} antialiased`}
+        className={`relative ${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${rockSalt.variable} antialiased`}
       >
         <noscript>
         <iframe
@@ -65,8 +63,9 @@ export default function RootLayout({ children }) {
           style={{ display: "none", visibility: "hidden" }}
         ></iframe>
       </noscript>
-
+        <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
