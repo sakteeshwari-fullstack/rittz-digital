@@ -33,8 +33,8 @@ const rockSalt = Rock_Salt({
 
 
 export const metadata = {
-  title: "Top Website Development Company in Chennai – Rittz Digital",
-  description: "Rittz Digital is a trusted website development company in Chennai, offering custom web design, eCommerce, and SEO-friendly solutions for growing businesses.",
+  // title: "Top Website Development Company in Chennai – Rittz Digital",
+  // description: "Rittz Digital is a trusted website development company in Chennai, offering custom web design, eCommerce, and SEO-friendly solutions for growing businesses.",
   icons: {
     icon: "/assets/favicon.ico", // Make sure favicon.ico exists in /public
   },
@@ -43,6 +43,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
        <Script id="gtm-init" strategy="beforeInteractive">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -51,7 +52,7 @@ export default function RootLayout({ children }) {
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-WMK2Z276');
         `}
-      </Script>
+      </Script></head>
       <body
         className={`relative ${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${rockSalt.variable} antialiased`}
       >
@@ -63,7 +64,7 @@ export default function RootLayout({ children }) {
           style={{ display: "none", visibility: "hidden" }}
         ></iframe>
       </noscript>
-        <Header/>
+        {/* <Header/> */}
         {children}
         <Footer/>
       </body>
