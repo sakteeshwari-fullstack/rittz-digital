@@ -89,7 +89,7 @@ const [played, setPlayed] = useState(false);
     <>
       <header className="w-full px-4 sm:px-6  md:px-10 py-3 pt-6 sm:py-4 md:py-5 flex items-center justify-between bg-transparent z-40">
         <h1 className="hidden">Best E-commerce Website Development Company in Chennai </h1>
-        <h2 className="hidden">Best  Website Development Company in Chennai</h2>
+        <h2 className="hidden">Best Website Development Company in Chennai</h2>
         <div className="flex items-center">
           <img
             src="/assets/Group 1000003312.png"
